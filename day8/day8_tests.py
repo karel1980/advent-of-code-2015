@@ -17,8 +17,6 @@ def test_eval_len():
 	assert_equals(eval_len('"\\x27"'), 1)
 
 def test_escape_string():
-	print "XXX",[ escape_string(s) for s in strings ]
-
 	assert_equals(len(escape_string('""')), 6)
 	assert_equals(len(escape_string('"abc"')), 9)
 	assert_equals(len(escape_string('"aaa\\"aaa"')), 16)
