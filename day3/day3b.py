@@ -1,4 +1,4 @@
-locations = {}
+locations = set()
 turn=0
 
 class DeliveryPerson:
@@ -22,7 +22,7 @@ robosanta = DeliveryPerson()
 deliverers = [santa,robosanta]
 current = 0
 
-locations[(0,0)] = True
+locations.add((0,0))
 for c in open('day3.input').read():
 	who = deliverers[current]
 	current = 1 - current
@@ -32,7 +32,6 @@ for c in open('day3.input').read():
 	elif c == '<': who.left()
 	elif c == '>': who.right()
 
-	print current, who.x, who.y
-	locations[(who.x,who.y)] = True
+	locations.add((who.x,who.y))
 
 print len(locations)
